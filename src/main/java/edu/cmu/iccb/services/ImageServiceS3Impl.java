@@ -59,10 +59,14 @@ public class ImageServiceS3Impl implements ImageService {
 	@Override
 	public void saveImage(String imageName, InputStream inputStream) throws IOException {
 		String imageId = Long.toString(System.currentTimeMillis());
-				
+			
 		PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, imageId, inputStream, new ObjectMetadata());
 
 		putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead);
+		//Request Sserver-side encryption
+		ObjectMetadata objectMetadata = new ObjectMetadata();
+		objectMetadata.setSSEAlgorithm(ObjectMetadata.AES_256_SERVER_SIDE_ENCRYPTION);
+		putObjectRequest.setMetadata(objectMetadata);
 
 		PutObjectResult putObjectResult = amazonS3Client.putObject(putObjectRequest);
 
