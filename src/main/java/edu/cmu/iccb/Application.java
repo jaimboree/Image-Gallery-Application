@@ -1,19 +1,11 @@
 package edu.cmu.iccb;
 
-import java.security.Principal;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.oauth2.client.OAuth2ClientContext;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableOAuth2Sso
@@ -23,8 +15,6 @@ public class Application extends WebSecurityConfigurerAdapter {
 		SpringApplication.run(Application.class, args);
 	}
 	
-	@Autowired
-	  OAuth2ClientContext oauth2ClientContext;
 	/*
 	@Bean
 	CommandLineRunner init() {
@@ -41,7 +31,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 		http
 	      .antMatcher("/**")
 	      .authorizeRequests()
-	        .antMatchers("/", "/login**", "/webjars/**")
+	        .antMatchers("/", "/github/success", "/webjars/**", "/css", "/js", "/fonts")
 	        .permitAll()
 	      .anyRequest()
 	        .authenticated();
