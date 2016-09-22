@@ -1,0 +1,4 @@
+---
+applications:
+- name: image-gallery
+  path: ./build/libs
