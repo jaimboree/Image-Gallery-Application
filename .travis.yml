@@ -1,4 +1,14 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 edge: true
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: jlstein@andrew.cmu.edu
+  password:
+    secure: byQQ6kCiH7U/aiBYX6asoGDZMq7i36eofVnNaklSrDDdhskxllJR5mD9/h8UCKk3A9Tbs+3wQP8+KuYb1nJwPF3nQF2xhnrW7/jx+lY7PJYKjZnX07rI3+od+aYle44LtpwUMEE8RcTdEIo4b8ijEHloYb3OWvamMK5R2zTufWZG/ZPUa8liqAIbiQA9zij6fOkzj48cF2Ta0PL/S/HohDwq+QuYG7isTMa+pg28YD6mKMeYbuVAgIlu25N3UR1dQByDkMrbYue8lmSaGhvtc/VP16/1DMC9JOVtv8+dF9vFvwVHZKcG69kVtDYt4tjXU2Tlo5IIh2WGG6078YADCtT6FwYQ7VDctQ9efRJFAl7tAgnbW+kP44UmSiVOvUVQ0VTjX7Hk/2/zayjRvrTu1SCh4zmxHn7UWusjyb7BrSrLzg5PHf5HI6+pn5sMxMnXqcrWZjFYavmR92qqR02PisAwhY0FxwRz3TpMJ4etlgHt9ueu5JxelHZV53lRkwDt6R1uM/ml/NhOIUvb2VGOCrBi4jrORNkheEfcrhSen/bKEfetL8UNAvDhg5S/3DaHDhDhUX5OvdEUoIhWdOftOgtUW4MkcXjFM5s0rjkU+27y/Mi9yL21ODw3hQ6AnWa0OIU4BncSb+ZAQ+Zxtso/jBq1uP+hiC1gll3gKjh53l8=
+  organization: jlstein
+  space: development
+  on:
+    repo: jaimboree/Image-Gallery-Application
