@@ -1,0 +1,16 @@
+multipart.maxFileSize: 640KB
+multipart.maxRequestSize: 640KB
+
+
+# example : us-east-1
+cloud.aws.region: us-east-1
+
+# example : s3-bucket-test-1
+cloud.aws.s3.bucket: cloudcomputinghw1
+
+
+security.oauth2.client.accessTokenUri: https://github.com/login/oauth/access_token
+security.oauth2.client.userAuthorizationUri: https://github.com/login/oauth/authorize
+security.oauth2.client.clientAuthenticationScheme: form
+security.oauth2.client.tokenName: access_token
+security.oauth2.resource.userInfoUri: https://api.github.com/user
