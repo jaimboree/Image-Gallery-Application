@@ -1,4 +1,4 @@
 ---
 applications:
-- name: image-gallery
+- name: image-gallery-hw5
   path: ./build/libs
